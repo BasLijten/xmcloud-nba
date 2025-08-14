@@ -1,0 +1,49 @@
+{
+  "$schema": "vscode://schemas/tasks",
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": ".NET: Build",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}/XmCloud.NBA.Api.csproj",
+        "-c",
+        "Debug"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$msCompile"]
+    },
+    {
+      "label": ".NET: Publish",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "publish",
+        "${workspaceFolder}/XmCloud.NBA.Api.csproj",
+        "-c",
+        "Release",
+        "-o",
+        "${workspaceFolder}/bin/Publish"
+      ],
+      "problemMatcher": ["$msCompile"]
+    },
+    {
+      "label": ".NET: Watch",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "watch",
+        "run",
+        "--project",
+        "${workspaceFolder}/XmCloud.NBA.Api.csproj"
+      ],
+      "isBackground": true,
+      "problemMatcher": ["$msCompile"]
+    }
+  ]
+}

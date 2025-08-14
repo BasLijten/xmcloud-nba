@@ -1,0 +1,31 @@
+{
+    // For more info: https://aka.ms/vscode-dotnet-debugging
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Launch (Kestrel)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": ".NET: Build",
+            "program": "${workspaceFolder}/bin/Debug/net8.0/XmCloud.NBA.Api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "DOTNET_ENVIRONMENT": "Development",
+                // Set a deterministic HTTP port (no HTTPS to avoid dev cert prompts). Change if occupied.
+                "ASPNETCORE_URLS": "http://localhost:5282"
+            },
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            }
+        },
+        {
+            "name": ".NET Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ]
+}
