@@ -6,7 +6,7 @@ POST {{host}}/GetNBA
 Content-Type: application/json
 
 {
-  "id": "42"
+  "id": "bas"
 }
 
 ### POST GetNBA without a body (Id will be null)

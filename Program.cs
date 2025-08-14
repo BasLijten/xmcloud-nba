@@ -6,10 +6,10 @@ var app = builder.Build();
 app.MapPost("/GetNBA", ([FromBody] NbaRequest? request) =>
 {
     var id = request?.Id;
-    var nba = new NbaResponse(id);
-    if (id == "bas") { nba.NBA = "auto"; }
-    if (id == "stefan") { nba.NBA = "reis"; }
-    return Results.Ok(nba);
+    NbaResponse response = null;
+    if (id == "bas") { response = new NbaResponse(id, "auto"); }
+    if (id == "stefan") { response = new NbaResponse(id, "reis"); }
+    return Results.Ok(response);
 });
 
 app.Run();
