@@ -1,12 +1,13 @@
 ### Environment
-@host = http://localhost:5282
+# @host = http://localhost:5282
+@host = https://xmcloud-nba-hwfgdteya2bcamdu.northeurope-01.azurewebsites.net
 
 ### POST GetNBA with an Id
 POST {{host}}/GetNBA
 Content-Type: application/json
 
 {
-  "id": "bas"
+  "id": ""
 }
 
 ### POST GetNBA without a body (Id will be null)
